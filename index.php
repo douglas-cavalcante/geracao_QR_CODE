@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1 class="text-center">Gerando QR CODE</h1>
-        <form  method="POST" action="index.php">
+        <form  method="GET">
             <input class="form-control mb-2" name="url" type="url" placeholder="Digite uma url" />
             <button type="submit" class="btn btn-primary float-right">Gerar QRCODE</button>
         </form> 
@@ -17,12 +17,12 @@
             <?php
                 require __DIR__."/phpqrcode/qrlib.php";
 
-                if(isset($_POST['url'])){
-                    $url = $_POST['url'];
+                if(isset($_GET['url'])){
+                    $url = $_GET['url'];
                     QRcode::png($url, "qr_img.png", QR_ECLEVEL_H, 4);
                     echo"
                         <div class='card mx-auto' style='width: 18rem;'>
-                            <
+                            <img src='qr_img.png' alt='qr_code'/>
                             <div class='card-body'>
                             <h5 class='card-title'>".$url."</h5>
                             </div>

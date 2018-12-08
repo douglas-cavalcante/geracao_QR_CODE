@@ -1,2 +1,1 @@
-# geracao_QR_CODE
-Geração de QR CODE utilizando php.
+<center>Geração de QR Code por meio de um formulário</center>
