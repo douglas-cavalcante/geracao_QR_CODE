@@ -16,12 +16,13 @@
         <div class="my-4">
             <?php
                 require __DIR__."/phpqrcode/qrlib.php";
+
                 if(isset($_POST['url'])){
                     $url = $_POST['url'];
                     QRcode::png($url, "qr_img.png", QR_ECLEVEL_H, 4);
                     echo"
                         <div class='card mx-auto' style='width: 18rem;'>
-                            <img class='card-img-top' src='qr_img.png' alt='qr code'>
+                            <
                             <div class='card-body'>
                             <h5 class='card-title'>".$url."</h5>
                             </div>
