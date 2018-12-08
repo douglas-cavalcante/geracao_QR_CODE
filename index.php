@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         <h1 class="text-center">Gerando QR CODE</h1>
-        <form  method="POST">
+        <form  method="POST" action="index.php">
             <input class="form-control mb-2" name="url" type="url" placeholder="Digite uma url" />
             <button type="submit" class="btn btn-primary float-right">Gerar QRCODE</button>
         </form> 
         <div class="my-4">
             <?php
-                require "/phpqrcode/qrlib.php";
+                require __DIR__."/phpqrcode/qrlib.php";
                 if(isset($_POST['url'])){
                     $url = $_POST['url'];
                     QRcode::png($url, "qr_img.png", QR_ECLEVEL_H, 4);
