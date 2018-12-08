@@ -15,7 +15,7 @@
         </form> 
         <div class="my-4">
             <?php
-                require __DIR__."/phpqrcode/qrlib.php";
+                require "/phpqrcode/qrlib.php";
                 if(isset($_POST['url'])){
                     $url = $_POST['url'];
                     QRcode::png($url, "qr_img.png", QR_ECLEVEL_H, 4);
